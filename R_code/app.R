@@ -1,5 +1,3 @@
-#library(spacyr)
-#spacy_initialize("en_core_web_lg")
 library(DT)
 library(shiny)
 library(shinydashboard)
@@ -73,8 +71,8 @@ server <- function(input, output, session){
   
   values <- reactiveValues(downloadReady = FALSE)
  
-  googlesheets::gs_webapp_auth_url(client_id = "958255062187-3ghpvvem5172q2r6b0s362i5k24hvrn2.apps.googleusercontent.com", redirect_uri = "http://127.0.0.1:6456/", access_type = "online", approval_prompt = "auto")
-  sheet_key <- "1NmAhK47oQSzD3seIbC-s-hAoFaWqGyqlKUslFV10dz4"
+  googlesheets::gs_webapp_auth_url(client_id = "YOUR_CLIENT_ID", redirect_uri = "http://127.0.0.1:6456/", access_type = "online", approval_prompt = "auto")
+  sheet_key <- "YOUR_SHEET_KEY"
   ss <- googlesheets::gs_key(sheet_key)
   js$initializeViz()  
   
@@ -100,7 +98,7 @@ server <- function(input, output, session){
       
       final_csv <- write.csv(final, "final_csv.csv")
       
-      gs_upload("final_csv.csv", "final_data", overwrite = TRUE)
+      gs_upload("final_csv.csv", "YOUR_SHEET_NAME", overwrite = TRUE)
       
       values$downloadReady <- TRUE
       return(final)
