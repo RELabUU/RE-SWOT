@@ -1,0 +1,1636 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20181.18.0612.1625                               -->
+<workbook source-build='10.5.5 (10500.18.0615.1128)' source-platform='mac' version='10.5' xml:base='https://dub01.online.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <repository-location derived-from='https://dub01.online.tableau.com/t/relabuu/workbooks/ReSWOT?rev=8.8' id='ReSWOT' path='/t/relabuu/workbooks' revision='8.9' site='relabuu' />
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='10.5'>
+      <aliases enabled='yes' />
+      <column caption='Par: total apps' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+        <calculation class='tableau' formula='3' />
+        <range max='3' min='3' />
+      </column>
+      <column caption='Sigma' datatype='real' name='[Parameter 2]' param-domain-type='any' role='measure' type='quantitative' value='0.10000000000000001'>
+        <calculation class='tableau' formula='0.10000000000000001' />
+      </column>
+      <column caption='1. To start, please type your app:' datatype='string' datatype-customized='true' name='[Parâmetro 1]' param-domain-type='any' role='measure' type='nominal' value='&quot;lightroom&quot;'>
+        <calculation class='tableau' formula='&quot;lightroom&quot;' />
+      </column>
+    </datasource>
+    <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' inline='true' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' version='10.5'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='TEMP_0aizimm0xhg1og0zowrpb0g2zzg5' name='google-sheets.185g1ss05yvv8h1d7lc611gr7ais'>
+            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='no' compat='no' dataRefreshTime='' filename='TEMP_0aizimm0xhg1og0zowrpb0g2zzg5' googleSheetId='1NmAhK47oQSzD3seIbC-s-hAoFaWqGyqlKUslFV10dz4' interpretationMode='8' mimeType='application/vnd.google-apps.spreadsheet' server='' server-oauth='server-custom' username='micaelagparente@gmail.com' validate='no' workgroup-auth-mode='prompt' />
+          </named-connection>
+        </named-connections>
+        <relation connection='google-sheets.185g1ss05yvv8h1d7lc611gr7ais' name='final_data' table='[final_data$]' type='table'>
+          <columns gridOrigin='A1:I4141:no:A1:I4141:0' header='yes' outcome='6'>
+            <column datatype='integer' name='F1' ordinal='0' />
+            <column datatype='string' name='app' ordinal='1' />
+            <column datatype='string' name='review_id' ordinal='2' />
+            <column datatype='string' name='pattern' ordinal='3' />
+            <column datatype='string' name='review' ordinal='4' />
+            <column datatype='integer' name='rating' ordinal='5' />
+            <column datatype='integer' name='review_sentiment' ordinal='6' />
+            <column datatype='date' name='date' ordinal='7' />
+            <column datatype='string' name='sentence' ordinal='8' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>F1</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[F1]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>F1</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>app</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[app]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>app</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review_id</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[review_id]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>review_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pattern</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[pattern]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>pattern</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[review]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>review</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rating</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rating]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>rating</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review_sentiment</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[review_sentiment]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>review_sentiment</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>sentence</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[sentence]</local-name>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias>sentence</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[final_data]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>2</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:I4141:no:A1:I4141:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column aggregation='Attribute' caption='Feat freq: Max freq' datatype='integer' name='[CALC: Pattern frequency (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:max([FIS: feat. volume all apps (copy)])}' />
+      </column>
+      <column caption='App: number reviews per quarter' datatype='integer' name='[Calculation_1792362323347095558]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{FIXED [app],[Quarter (copy)]: COUNTd([review_id])}' />
+      </column>
+      <column caption='% reviews' datatype='real' name='[Calculation_1792362323348353031]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[FIS: feat. volume all apps (copy)]/[Calculation_1792362323347095558]' />
+      </column>
+      <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
+      </column>
+      <column caption='Rating: transformed' datatype='integer' name='[Calculation_3328934231155302400]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='CASE [rating]&#10;    when 1 then -2&#10;    when 2 then -1&#10;    when 3 then 0&#10;    when 4 then 1&#10;    when 5 then 2&#10;&#10;end' />
+      </column>
+      <column aggregation='Attribute' caption='Apps with feature' datatype='integer' name='[Calculation_3328934231520051201]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ EXCLUDE  [app]:&#10;COUNTD([app])&#10;&#10;}' />
+      </column>
+      <column caption='Title' datatype='string' name='[Calculation_4233102215890808833]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [app] = &quot;None&quot; then &quot;Teste&quot;&#10;ELSE &quot;Reviews for &quot; + [app] + &quot; mentioning &quot; + [pattern] + &quot;:&quot; end' />
+      </column>
+      <column aggregation='Attribute' caption='FPS: sum sent x volume' datatype='real' name='[Calculation_487162871686516737]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ EXCLUDE app: sum(ABS([Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]))}' />
+      </column>
+      <column caption='FPS: sent x volume' datatype='real' name='[Calculation_487162871686881282]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]' />
+      </column>
+      <column caption='FPS' datatype='real' name='[Calculation_487162871687270403]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]/[Calculation_487162871686516737]' />
+      </column>
+      <column caption='SWOT classifier' datatype='string' name='[Calculation_50313703186886656]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='if [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;= -[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Weakness&quot; &#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;=-[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Opportunity&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Opportunity&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Weakness&quot;&#10;&#10;else &quot;Others&quot;&#10;end' />
+      </column>
+      <column aggregation='Attribute' caption='Y: Feature uniqueness' datatype='string' name='[Calculation_5156621625105870848]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='IF [Calculation_3328934231520051201] == [Parameters].[Parameter 1]&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] == 1 and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features unique to &quot; + [Parameters].[Parâmetro 1]&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} =0&#10;then &quot;Features unique to competition&quot;&#10;&#10;else &quot;Features unique to competition&quot; end' />
+      </column>
+      <column caption='Total apps' datatype='integer' name='[Calculation_5156621625107578881]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='COUNTD([app])' />
+      </column>
+      <column caption='Other apps' datatype='string' name='[Calculation_5156621625113882627]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [app] != [Parameters].[Parâmetro 1] then &quot;Competition&quot; end' />
+      </column>
+      <column caption='FPS: feat. sent. per app' datatype='real' name='[Calculation_5695012884745781248]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Calculation_3328934231155302400])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
+      </column>
+      <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
+        <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
+      </column>
+      <column caption='feature' datatype='string' name='[Calculation_6807542742974251008]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='pattern' />
+      </column>
+      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative' />
+      <column caption='FPS: feat. volume per app' datatype='integer' name='[FIS: feat. volume all apps (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ INCLUDE [app], [pattern]: COUNTD([review_id])}' />
+      </column>
+      <column aggregation='Attribute' caption='FPS: market avg' datatype='real' name='[FPS (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ EXCLUDE [app]: AVG([Calculation_487162871687270403])}' />
+      </column>
+      <column aggregation='Attribute' caption='Feat freq: Min freq' datatype='integer' name='[Feat freq: Max freq (copy)]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:min([FIS: feat. volume all apps (copy)])}' />
+      </column>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
+      </column>
+      <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+      <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
+      </column>
+      <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+      <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
+        <aliases>
+          <alias key='1' value='1✮' />
+          <alias key='2' value='2✮' />
+          <alias key='3' value='3✮' />
+          <alias key='4' value='4✮' />
+          <alias key='5' value='5✮' />
+        </aliases>
+      </column>
+      <column caption='review' datatype='string' name='[review]' role='dimension' type='nominal' />
+      <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
+      <column-instance column='[Calculation_50313703186886656]' derivation='Attribute' name='[attr:Calculation_50313703186886656:nk]' pivot='key' type='nominal' />
+      <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
+      <column-instance column='[app]' derivation='None' name='[none:app:nk]' pivot='key' type='nominal' />
+      <column-instance column='[pattern]' derivation='None' name='[none:pattern:nk]' pivot='key' type='nominal' />
+      <column-instance column='[review_sentiment]' derivation='None' name='[none:review_sentiment:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (app)' hidden='true' name='[Action (app)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[app]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (app,pattern)' hidden='true' name='[Action (app,pattern)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[app]' />
+          <groupfilter function='level-members' level='[pattern]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (feature)' hidden='true' name='[Action (feature)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[Calculation_6807542742974251008]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (pattern)' hidden='true' name='[Action (pattern)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[pattern]' />
+        </groupfilter>
+      </group>
+      <group caption='Action (review,sentiment)' hidden='true' name='[Action (review,sentiment)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[review]' />
+          <groupfilter function='level-members' level='[sentiment]' />
+        </groupfilter>
+      </group>
+      <group hidden='true' name='[Exclusions (app,pattern)]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:app:nk]' />
+          <groupfilter function='level-members' level='[none:pattern:nk]' />
+        </groupfilter>
+      </group>
+      <group caption='Tooltip (app,pattern)' hidden='true' name='[Tooltip (app,pattern)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[app]' />
+          <groupfilter function='level-members' level='[pattern]' />
+        </groupfilter>
+      </group>
+      <extract count='-1' enabled='false' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/var/folders/n5/rt18wqy54d3_lp2bbd44qyd40000gn/T/tableau-temp/3275430782/Data/Extracts/federated_0pl0ds504pxp4d17jiqzv1.hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/07/2018 04:15:14 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh>
+            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='3267' timestamp-start='2018-03-07 16:15:14.787' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>app</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[app]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>app</remote-alias>
+              <ordinal>0</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[review_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>review_id</remote-alias>
+              <ordinal>1</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3267</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>pattern</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[pattern]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>pattern</remote-alias>
+              <ordinal>2</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>70</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sentence_id</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sentence_id]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sentence_id</remote-alias>
+              <ordinal>3</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>19</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>title</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[title]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>title</remote-alias>
+              <ordinal>4</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2161</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>review</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[review]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>review</remote-alias>
+              <ordinal>5</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3267</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>rating</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[rating]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>rating</remote-alias>
+              <ordinal>6</ordinal>
+              <family>final_data</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>5</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>sentiment</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[sentiment]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>sentiment</remote-alias>
+              <ordinal>7</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>3</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>date</remote-alias>
+              <ordinal>8</ordinal>
+              <family>final_data</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>327</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>app_version</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[app_version]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>app_version</remote-alias>
+              <ordinal>9</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>60</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>author</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[author]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>author</remote-alias>
+              <ordinal>10</ordinal>
+              <family>final_data</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2522</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_S2' />
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.38193' measure-ordering='alphabetic' measure-percentage='0.480493' parameter-percentage='0.137577' show-aliased-fields='true' show-structure='true' user-set-layout='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:pattern:nk]' palette='tableau-20' type='palette'>
+            <map to='#17becf'>
+              <bucket>&quot;previous version&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;ability select&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;able edit&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;none&quot;</bucket>
+            </map>
+            <map to='#1f77b4'>
+              <bucket>&quot;raw file&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;desktop mobile&quot;</bucket>
+            </map>
+            <map to='#2ca02c'>
+              <bucket>&quot;social media&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;qrcode photo&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;white background&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;new interface&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;photo edit&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;clone stamp&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;curve tool&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;new layout&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;social medium&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;green dot&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;look amazing&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;new tool&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;option hsl&quot;</bucket>
+            </map>
+            <map to='#7f7f7f'>
+              <bucket>&quot;photo load&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;new look&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;purchase preset&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;update x&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;hdr image&quot;</bucket>
+            </map>
+            <map to='#8c564b'>
+              <bucket>&quot;import photo&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;favorite editing&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;like new&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;photo editor&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;recent update&quot;</bucket>
+            </map>
+            <map to='#9467bd'>
+              <bucket>&quot;editing tool&quot;</bucket>
+            </map>
+            <map to='#98df8a'>
+              <bucket>&quot;desktop version&quot;</bucket>
+            </map>
+            <map to='#9c755f'>
+              <bucket>&quot;sync computer&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;screen scan&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;tool provide&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;useful feature&quot;</bucket>
+            </map>
+            <map to='#9edae5'>
+              <bucket>&quot;professional photographer&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;shoot raw&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;toning option&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;camera roll&quot;</bucket>
+            </map>
+            <map to='#aec7e8'>
+              <bucket>&quot;raw photo&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;late update&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;new feature&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;picture look&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;scan code&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;open photo&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;favorite photo&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;improve photo&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;photo re-add&quot;</bucket>
+            </map>
+            <map to='#bcbd22'>
+              <bucket>&quot;photo sync&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;mobile version&quot;</bucket>
+            </map>
+            <map to='#c49c94'>
+              <bucket>&quot;new ui&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;feature desktop&quot;</bucket>
+            </map>
+            <map to='#c5b0d5'>
+              <bucket>&quot;photo iphone&quot;</bucket>
+            </map>
+            <map to='#c7c7c7'>
+              <bucket>&quot;photo phone&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;filter screen&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;long time&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;multiple photo&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;error loading&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;scan qrcode&quot;</bucket>
+            </map>
+            <map to='#d62728'>
+              <bucket>&quot;edit photo&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;loading content&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;split toning&quot;</bucket>
+            </map>
+            <map to='#dbdb8d'>
+              <bucket>&quot;portrait mode&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;add feature&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;color split&quot;</bucket>
+            </map>
+            <map to='#e377c2'>
+              <bucket>&quot;new update&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;edit picture&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;healing option&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;save photo&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;new phone&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;old version&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;light room&quot;</bucket>
+            </map>
+            <map to='#f7b6d2'>
+              <bucket>&quot;noise reduction&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;gradient mask&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;old filter&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;creative cloud&quot;</bucket>
+            </map>
+            <map to='#ff7f0e'>
+              <bucket>&quot;sync desktop&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;edit raw&quot;</bucket>
+            </map>
+            <map to='#ff9896'>
+              <bucket>&quot;iphone x&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;double exposure&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;easy photo&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;free filter&quot;</bucket>
+            </map>
+            <map to='#ff9da7'>
+              <bucket>&quot;raw image&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;customer service&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;photo editing&quot;</bucket>
+            </map>
+            <map to='#ffbb78'>
+              <bucket>&quot;user friendly&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;photo look&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;server error&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;tool add&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:review_sentiment:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>-2</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>2</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>0</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>-1</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[attr:Calculation_50313703186886656:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Strength&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Opportunity&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>%null%</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Others&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Weakness&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Threat&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:app:nk]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;Badoo&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;POF&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Bumble&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:Calculation_3094254478144913408:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;positive&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;negative&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;neutral&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+      <datasource-dependencies datasource='Parameters'>
+        <column caption='Par: total apps' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+          <calculation class='tableau' formula='3' />
+          <range max='3' min='3' />
+        </column>
+        <column caption='Sigma' datatype='real' name='[Parameter 2]' param-domain-type='any' role='measure' type='quantitative' value='0.10000000000000001'>
+          <calculation class='tableau' formula='0.10000000000000001' />
+        </column>
+        <column caption='1. To start, please type your app:' datatype='string' datatype-customized='true' name='[Parâmetro 1]' param-domain-type='any' role='measure' type='nominal' value='&quot;lightroom&quot;'>
+          <calculation class='tableau' formula='&quot;lightroom&quot;' />
+        </column>
+      </datasource-dependencies>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Filter1' name='[Action1]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='ReSWOT' type='sheet' worksheet='All apps' />
+      <command command='tsc:tsl-filter'>
+        <param name='exclude' value='All apps' />
+        <param name='on-empty' value='none' />
+        <param name='special-fields' value='all' />
+        <param name='target' value='ReSWOT' />
+      </command>
+    </action>
+    <action caption='Filter2' name='[Action2]'>
+      <activation auto-clear='true' type='on-select' />
+      <source dashboard='ReSWOT' type='sheet' worksheet='All apps' />
+      <link caption='Filter2' delimiter=',' escape='\' expression='tsl:All%20apps?%5Bfederated.0pl0ds504pxp4d17jiqzv1ob5yek%5D.%5BCalculation_6807542742974251008%5D~s0=&lt;[pattern]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <command command='tsc:tsl-filter'>
+        <param name='target' value='All apps' />
+      </command>
+    </action>
+    <datasources>
+      <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+    </datasources>
+    <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+      <column caption='feature' datatype='string' name='[Calculation_6807542742974251008]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='pattern' />
+      </column>
+      <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+    </datasource-dependencies>
+  </actions>
+  <worksheets>
+    <worksheet name='All apps'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+            <datasource name='Parameters' />
+          </datasources>
+          <datasource-dependencies datasource='Parameters'>
+            <column caption='Par: total apps' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
+              <calculation class='tableau' formula='3' />
+              <range max='3' min='3' />
+            </column>
+            <column caption='Sigma' datatype='real' name='[Parameter 2]' param-domain-type='any' role='measure' type='quantitative' value='0.10000000000000001'>
+              <calculation class='tableau' formula='0.10000000000000001' />
+            </column>
+            <column caption='1. To start, please type your app:' datatype='string' datatype-customized='true' name='[Parâmetro 1]' param-domain-type='any' role='measure' type='nominal' value='&quot;lightroom&quot;'>
+              <calculation class='tableau' formula='&quot;lightroom&quot;' />
+            </column>
+          </datasource-dependencies>
+          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+            <column aggregation='Attribute' caption='Feat freq: Max freq' datatype='integer' name='[CALC: Pattern frequency (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:max([FIS: feat. volume all apps (copy)])}' />
+            </column>
+            <column caption='App: number reviews per quarter' datatype='integer' name='[Calculation_1792362323347095558]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{FIXED [app],[Quarter (copy)]: COUNTd([review_id])}' />
+            </column>
+            <column caption='% reviews' datatype='real' name='[Calculation_1792362323348353031]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[FIS: feat. volume all apps (copy)]/[Calculation_1792362323347095558]' />
+            </column>
+            <column caption='Rating: transformed' datatype='integer' name='[Calculation_3328934231155302400]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='CASE [rating]&#10;    when 1 then -2&#10;    when 2 then -1&#10;    when 3 then 0&#10;    when 4 then 1&#10;    when 5 then 2&#10;&#10;end' />
+            </column>
+            <column aggregation='Attribute' caption='Apps with feature' datatype='integer' name='[Calculation_3328934231520051201]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ EXCLUDE  [app]:&#10;COUNTD([app])&#10;&#10;}' />
+            </column>
+            <column aggregation='Attribute' caption='FPS: sum sent x volume' datatype='real' name='[Calculation_487162871686516737]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ EXCLUDE app: sum(ABS([Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]))}' />
+            </column>
+            <column caption='FPS' datatype='real' name='[Calculation_487162871687270403]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='[Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]/[Calculation_487162871686516737]' />
+            </column>
+            <column caption='SWOT classifier' datatype='string' name='[Calculation_50313703186886656]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='if [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;= -[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Weakness&quot; &#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;=-[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Opportunity&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Opportunity&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Weakness&quot;&#10;&#10;else &quot;Others&quot;&#10;end' />
+            </column>
+            <column aggregation='Attribute' caption='Y: Feature uniqueness' datatype='string' name='[Calculation_5156621625105870848]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='IF [Calculation_3328934231520051201] == [Parameters].[Parameter 1]&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] == 1 and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features unique to &quot; + [Parameters].[Parâmetro 1]&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} =0&#10;then &quot;Features unique to competition&quot;&#10;&#10;else &quot;Features unique to competition&quot; end' />
+            </column>
+            <column caption='FPS: feat. sent. per app' datatype='real' name='[Calculation_5695012884745781248]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Calculation_3328934231155302400])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
+            </column>
+            <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
+              <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
+            </column>
+            <column caption='feature' datatype='string' name='[Calculation_6807542742974251008]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='pattern' />
+            </column>
+            <column caption='FPS: feat. volume per app' datatype='integer' name='[FIS: feat. volume all apps (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ INCLUDE [app], [pattern]: COUNTD([review_id])}' />
+            </column>
+            <column aggregation='Attribute' caption='FPS: market avg' datatype='real' name='[FPS (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ EXCLUDE [app]: AVG([Calculation_487162871687270403])}' />
+            </column>
+            <column aggregation='Attribute' caption='Feat freq: Min freq' datatype='integer' name='[Feat freq: Max freq (copy)]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:min([FIS: feat. volume all apps (copy)])}' />
+            </column>
+            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
+            </column>
+            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column-instance column='[CALC: Pattern frequency (copy)]' derivation='Attribute' name='[attr:CALC: Pattern frequency (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1792362323347095558]' derivation='Attribute' name='[attr:Calculation_1792362323347095558:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1792362323348353031]' derivation='Attribute' name='[attr:Calculation_1792362323348353031:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_487162871687270403]' derivation='Attribute' name='[attr:Calculation_487162871687270403:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_50313703186886656]' derivation='Attribute' name='[attr:Calculation_50313703186886656:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_5156621625105870848]' derivation='Attribute' name='[attr:Calculation_5156621625105870848:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_6254374024476311552]' derivation='Attribute' name='[attr:Calculation_6254374024476311552:nk]' pivot='key' type='nominal' />
+            <column-instance column='[FIS: feat. volume all apps (copy)]' derivation='Attribute' name='[attr:FIS: feat. volume all apps (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[FPS (copy)]' derivation='Attribute' name='[attr:FPS (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Feat freq: Max freq (copy)]' derivation='Attribute' name='[attr:Feat freq: Max freq (copy):qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Quarter (copy)]' derivation='Attribute' name='[attr:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
+            </column>
+            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[app]' derivation='None' name='[none:app:nk]' pivot='key' type='nominal' />
+            <column-instance column='[pattern]' derivation='None' name='[none:pattern:nk]' pivot='key' type='nominal' />
+            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='1' value='1✮' />
+                <alias key='2' value='2✮' />
+                <alias key='3' value='3✮' />
+                <alias key='4' value='4✮' />
+                <alias key='5' value='5✮' />
+              </aliases>
+            </column>
+            <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+            <column-instance column='[FIS: feat. volume all apps (copy)]' derivation='Sum' name='[sum:FIS: feat. volume all apps (copy):qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (feature)]'>
+            <groupfilter function='level-members' level='[Calculation_6807542742974251008]' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]'>
+            <groupfilter function='level-members' level='[attr:Calculation_50313703186886656:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]'>
+            <groupfilter function='level-members' level='[attr:Calculation_6254374024476311552:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:pattern:nk]' />
+              <groupfilter function='member' level='[none:pattern:nk]' member='&quot;none&quot;' />
+            </groupfilter>
+          </filter>
+          <sort class='computed' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' direction='DESC' using='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[sum:FIS: feat. volume all apps (copy):qk]' />
+          <slices>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (feature)]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='8' />
+            <format attr='font-size' value='9' />
+            <format attr='font-weight' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='normal' />
+            <format attr='font-weight' value='normal' />
+            <format attr='font-weight' data-class='subtotal' value='normal' />
+            <format attr='font-weight' data-class='total' value='bold' />
+            <format attr='font-weight' data-class='subtotal' scope='rows' value='normal' />
+            <format attr='font-weight' data-class='subtotal' scope='cols' value='normal' />
+            <format attr='font-weight' data-class='total' scope='cols' value='bold' />
+            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]' value='p0.0%' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]' value='28' />
+            <format attr='border-style' data-class='subtotal' value='none' />
+            <format attr='font-weight' data-class='subtotal' scope='cols' value='bold' />
+            <format attr='font-weight' data-class='total' scope='cols' value='bold' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]' value='0' />
+            <format attr='font-weight' value='bold' />
+            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='8' />
+            <format attr='font-weight' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='normal' />
+            <format attr='font-weight' scope='rows' value='bold' />
+            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='center' />
+            <format attr='font-weight' scope='cols' value='bold' />
+            <format attr='wrap' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='on' />
+            <format attr='vertical-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='center' />
+            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='0' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-style' data-class='subtotal' value='none' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='rows' value='false' />
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='font-weight' value='normal' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='div-level' scope='rows' value='0' />
+            <format attr='div-level' scope='cols' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='legend-title-text'>
+            <format attr='color' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='Legend - SWOT'>
+              <formatted-text>
+                <run>Legend - SWOT</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' value='Filter by feature volume'>
+              <formatted-text>
+                <run>Filter by feature volume</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]' value='Issues uniqueness' />
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' value='Filter by quarter'>
+              <formatted-text>
+                <run>Filter by quarter</run>
+              </formatted-text>
+            </format>
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='Filter by SWOT'>
+              <formatted-text>
+                <run>Filter by SWOT</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+          <style-rule element='data-highlighter-title'>
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='SWOT' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <size column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Feat freq: Max freq (copy):qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:CALC: Pattern frequency (copy):qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323347095558:qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Quarter (copy):nk]' />
+              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' />
+              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]&gt; </run>
+                <run> is mentioned in </run>
+                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]&gt;/&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323347095558:qk]&gt; (&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]&gt;)</run>
+                <run> &#10;of the reviews of </run>
+                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]&gt;</run>
+                <run> in this period.</run>
+                <run fontalignment='1'>&#10;&lt;Sheet name=&quot;Ratings&quot; maxwidth=&quot;150&quot; maxheight=&quot;100&quot; filter=&quot;&lt;All Fields&gt;&quot;&gt;&#10;&#10;</run>
+                <run fontalignment='1' underline='true'>Feature performance score for &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]&gt;</run>
+                <run fontalignment='1'>Æ&#10;</run>
+                <run bold='true' fontalignment='1'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]&gt;</run>
+                <run fontalignment='1'>: &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]&gt; | </run>
+                <run bold='true' fontalignment='1'>market</run>
+                <run fontalignment='1'>: &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]&gt;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <customized-label>
+              <formatted-text>
+                <run>&lt;</run>
+                <run>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]</run>
+                <run>&gt;</run>
+              </formatted-text>
+            </customized-label>
+            <style>
+              <style-rule element='cell'>
+                <format attr='wrap' value='on' />
+                <format attr='text-orientation' value='0' />
+                <format attr='text-align' value='center' />
+                <format attr='vertical-align' value='center' />
+              </style-rule>
+              <style-rule element='datalabel'>
+                <format attr='color-mode' value='auto' />
+                <format attr='font-size' value='8' />
+                <format attr='font-weight' value='normal' />
+                <format attr='font-family' value='Tableau Book' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-range-scope' value='table' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='has-stroke' value='true' />
+                <format attr='stroke-color' value='#333333' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]</rows>
+        <cols>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Ratings'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>Rating distribution</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+            <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
+            </column>
+            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
+            </column>
+            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
+            </column>
+            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[rating]' derivation='None' name='[none:rating:ok]' pivot='key' type='ordinal' />
+            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column-instance column='[rating]' derivation='Count' name='[pcto:cnt:rating:qk]' pivot='key' type='quantitative'>
+              <table-calc ordering-type='Rows' type='PctTotal' />
+            </column-instance>
+            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='1' value='1✮' />
+                <alias key='2' value='2✮' />
+                <alias key='3' value='3✮' />
+                <alias key='4' value='4✮' />
+                <alias key='5' value='5✮' />
+              </aliases>
+            </column>
+            <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Tooltip (app,pattern)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - Ratings]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[app]' />
+              <groupfilter function='level-members' level='[pattern]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Tooltip (app,pattern)]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' field-type='quantitative' major-show='false' minor-show='false' scope='rows' type='space' />
+            <format attr='subtitle' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='true' />
+            <format attr='display' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='false' />
+            <format attr='border-color' value='#b0b0b0' />
+            <format attr='border-width' value='1' />
+            <format attr='line-pattern-only' value='dotted' />
+            <format attr='line-visibility' value='off' />
+            <format attr='tick-color' value='#00000000' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' value='p0%' />
+            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='0' />
+            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
+            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='' />
+            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='8' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='display' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='true' />
+            <format attr='font-size' scope='cols' value='8' />
+            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='0' />
+            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
+            <format attr='vertical-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
+            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='8' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='display-field-labels' scope='cols' value='false' />
+            <format attr='in-tooltip' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='false' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='refline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+          <style-rule element='gridline'>
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+          <style-rule element='zeroline'>
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane decimalplaces='-2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' />
+              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='aspect' value='1' />
+              </style-rule>
+              <style-rule element='trendline'>
+                <format attr='line-visibility' value='off' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows include-empty='true'>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]</rows>
+        <cols include-empty='true'>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Reviews'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontsize='10'>Current selection -&gt; App: </run>
+            <run bold='true' fontsize='10'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]&gt;</run>
+            <run fontsize='10'> | Feature: </run>
+            <run bold='true' fontsize='10'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]&gt; </run>
+          </formatted-text>
+        </title>
+        <caption>
+          <formatted-text>
+            <run>App: &lt;</run>
+            <run>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]</run>
+            <run>&gt;&#10;</run>
+          </formatted-text>
+        </caption>
+      </layout-options>
+      <repository-location derived-from='https://public.tableau.com/workbooks/PhotoeditingSWOT/Reviewsv2?rev=' id='Reviewsv2' path='/workbooks/ReSWOT' revision='' />
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+            <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
+            </column>
+            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
+            </column>
+            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column-instance column='[app]' derivation='Attribute' name='[attr:app:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date]' derivation='Attribute' name='[attr:date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[pattern]' derivation='Attribute' name='[attr:pattern:nk]' pivot='key' type='nominal' />
+            <column-instance column='[rating]' derivation='Attribute' name='[attr:rating:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[sentence]' derivation='Attribute' name='[attr:sentence:nk]' pivot='key' type='nominal' />
+            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
+            </column>
+            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[review]' derivation='None' name='[none:review:nk]' pivot='key' type='nominal' />
+            <column-instance column='[review_id]' derivation='None' name='[none:review_id:nk]' pivot='key' type='nominal' />
+            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
+              <aliases>
+                <alias key='1' value='1✮' />
+                <alias key='2' value='2✮' />
+                <alias key='3' value='3✮' />
+                <alias key='4' value='4✮' />
+                <alias key='5' value='5✮' />
+              </aliases>
+            </column>
+            <column caption='review' datatype='string' name='[review]' role='dimension' type='nominal' />
+            <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[sentence]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='empty-level' member='[app]' />
+              <groupfilter function='empty-level' member='[pattern]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]</column>
+            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='quick-filter'>
+            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' value='Review sentiment'>
+              <formatted-text>
+                <run>Review sentiment</run>
+              </formatted-text>
+            </format>
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Shape' />
+            <mark-sizing mark-sizing-setting='marks-scaling-off' />
+            <encodings>
+              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' />
+              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:sentence:nk]' />
+              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review:nk]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:date:ok]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:rating:qk]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]' />
+              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review_id:nk]' />
+            </encodings>
+            <customized-tooltip>
+              <formatted-text>
+                <run bold='true'>Extracts mentioning </run>
+                <run bold='true' underline='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]&gt;</run>
+                <run bold='true'>:</run>
+                <run>Æ&#10;</run>
+                <run italic='true'>&quot;&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:sentence:nk]&gt;&quot;</run>
+                <run>Æ&#10;&#10;</run>
+                <run bold='true'>Full review:</run>
+                <run>&#10;&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review:nk]&gt;&#10;&#10;</run>
+                <run bold='true'>Rating:</run>
+                <run> &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:rating:qk]&gt; | </run>
+                <run bold='true'>Date:</run>
+                <run> &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:date:ok]&gt; &#10;</run>
+                <run bold='true'>App: </run>
+                <run>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]&gt;</run>
+                <run bold='true'>Æ </run>
+                <run>Æ&#10;&#10;</run>
+              </formatted-text>
+            </customized-tooltip>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-line-first' value='true' />
+                <format attr='mark-labels-line-last' value='true' />
+                <format attr='mark-labels-range-min' value='true' />
+                <format attr='mark-labels-range-max' value='true' />
+                <format attr='mark-labels-mode' value='all' />
+                <format attr='mark-labels-range-scope' value='pane' />
+                <format attr='mark-labels-range-field' value='' />
+                <format attr='shape' value=':filled/diamond' />
+                <format attr='mark-labels-show' value='false' />
+                <format attr='size' value='0.93353593349456787' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows />
+        <cols />
+      </table>
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard name='ReSWOT'>
+      <repository-location derived-from='https://dub01.online.tableau.com/t/relabuu/workbooks/ReSWOT/ReSWOT?rev=' id='ReSWOT' path='/t/relabuu/workbooks/ReSWOT' revision='' site='relabuu' />
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+        <column caption='SWOT classifier' datatype='string' name='[Calculation_50313703186886656]' role='measure' type='nominal'>
+          <calculation class='tableau' formula='if [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;= -[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Weakness&quot; &#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;=-[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Opportunity&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Opportunity&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Weakness&quot;&#10;&#10;else &quot;Others&quot;&#10;end' />
+        </column>
+        <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
+          <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
+        </column>
+        <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
+          <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
+        </column>
+        <column-instance column='[Calculation_50313703186886656]' derivation='Attribute' name='[attr:Calculation_50313703186886656:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Calculation_6254374024476311552]' derivation='Attribute' name='[attr:Calculation_6254374024476311552:nk]' pivot='key' type='nominal' />
+        <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones use-insets='false'>
+        <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
+          <zone h='83882' id='15' type='layout-basic' w='98504' x='748' y='1278'>
+            <zone h='83882' id='5' param='horz' type='layout-flow' w='83073' x='748' y='1278'>
+              <zone h='83882' id='3' type='layout-basic' w='83073' x='748' y='1278'>
+                <zone h='83882' id='1' name='All apps' show-title='false' w='83073' x='748' y='1278'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+            <zone h='83882' id='16' param='horz' type='layout-flow' w='15431' x='83821' y='1278'>
+              <zone fixed-size='185' h='83882' id='4' is-fixed='true' param='vert' type='layout-flow' w='15431' x='83821' y='1278'>
+                <zone custom-title='true' fixed-size='109' h='18690' id='11' is-fixed='true' mode='type_in' param='[Parameters].[Parâmetro 1]' type='paramctrl' w='15431' x='83821' y='1278'>
+                  <formatted-text>
+                    <run bold='true' underline='true'>TO START</run>
+                    <run>&#10;Type your app name:</run>
+                  </formatted-text>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='45' h='8466' id='18' is-fixed='true' mode='dropdown' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='filter' w='15431' x='83821' y='19968'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='44' h='8307' id='7' is-fixed='true' mode='checkdropdown' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' type='filter' w='15431' x='83821' y='28434'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='98' h='16933' id='17' is-fixed='true' mode='slider' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' show-all='false' type='filter' w='15431' x='83821' y='36741'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='121' h='20607' id='8' is-fixed='true' name='All apps' pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='color' w='15431' x='83821' y='53674'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone h='13562' id='9' name='Reviews' w='98504' x='748' y='85160'>
+            <zone-style>
+              <format attr='border-color' value='#000000' />
+              <format attr='border-style' value='none' />
+              <format attr='border-width' value='0' />
+              <format attr='margin' value='0' />
+            </zone-style>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='4' />
+            <format attr='padding' value='4' />
+          </zone-style>
+        </zone>
+      </zones>
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Reviews'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card size='31' type='pages' />
+            <card size='139' type='filters' />
+            <card size='268' type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+    </window>
+    <window class='worksheet' name='Ratings'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' name='All apps'>
+      <cards>
+        <edge name='left'>
+          <strip size='300'>
+            <card size='30' type='pages' />
+            <card size='110' type='filters' />
+            <card size='298' type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='entire-view' />
+        <floating-toolbar-visibility value='1' />
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+    </window>
+    <window class='dashboard' maximized='true' name='ReSWOT'>
+      <viewpoints>
+        <viewpoint name='All apps'>
+          <zoom type='entire-view' />
+          <default-map-tool-selection tool='4' />
+        </viewpoint>
+        <viewpoint name='Reviews'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='17' />
+    </window>
+  </windows>
+</workbook>
