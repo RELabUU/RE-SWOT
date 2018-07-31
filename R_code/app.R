@@ -99,6 +99,7 @@ server <- function(input, output, session){
       
       final_csv <- write.csv(final, "final_csv.csv")
       
+      #Uncomment for uploading visualization data to a Google Spreadsheet
       #gs_upload("final_csv.csv", "YOUR_SHEET_NAME", overwrite = TRUE)
       
       values$downloadReady <- TRUE
