@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8' ?>
 
-<!-- build 20181.18.0612.1625                               -->
+<!-- build 10500.18.0615.1128                               -->
 <workbook source-build='10.5.5 (10500.18.0615.1128)' source-platform='mac' version='10.5' xml:base='https://dub01.online.tableau.com' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <repository-location derived-from='https://dub01.online.tableau.com/t/relabuu/workbooks/ReSWOT?rev=8.8' id='ReSWOT' path='/t/relabuu/workbooks' revision='8.9' site='relabuu' />
   <preferences>
@@ -21,171 +21,272 @@
         <calculation class='tableau' formula='&quot;lightroom&quot;' />
       </column>
     </datasource>
-    <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' inline='true' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' version='10.5'>
+    <datasource caption='sample_data' inline='true' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' version='10.5'>
       <connection class='federated'>
         <named-connections>
-          <named-connection caption='TEMP_0aizimm0xhg1og0zowrpb0g2zzg5' name='google-sheets.185g1ss05yvv8h1d7lc611gr7ais'>
-            <connection REDIRECT_URI='urn:ietf:wg:oauth:2.0:oob' SCOPE='email profile https://www.googleapis.com/auth/drive.readonly' class='google-sheets' cleaning='no' compat='no' dataRefreshTime='' filename='TEMP_0aizimm0xhg1og0zowrpb0g2zzg5' googleSheetId='1NmAhK47oQSzD3seIbC-s-hAoFaWqGyqlKUslFV10dz4' interpretationMode='8' mimeType='application/vnd.google-apps.spreadsheet' server='' server-oauth='server-custom' username='micaelagparente@gmail.com' validate='no' workgroup-auth-mode='prompt' />
+          <named-connection caption='sample_data' name='textscan.1q4pq6w1ttsmeq191s6jc03v2cmz'>
+            <connection class='textscan' directory='/Users/mparente/Desktop' filename='sample_data.csv' password='' server='' />
           </named-connection>
         </named-connections>
-        <relation connection='google-sheets.185g1ss05yvv8h1d7lc611gr7ais' name='final_data' table='[final_data$]' type='table'>
-          <columns gridOrigin='A1:I4141:no:A1:I4141:0' header='yes' outcome='6'>
-            <column datatype='integer' name='F1' ordinal='0' />
-            <column datatype='string' name='app' ordinal='1' />
-            <column datatype='string' name='review_id' ordinal='2' />
-            <column datatype='string' name='pattern' ordinal='3' />
-            <column datatype='string' name='review' ordinal='4' />
-            <column datatype='integer' name='rating' ordinal='5' />
-            <column datatype='integer' name='review_sentiment' ordinal='6' />
-            <column datatype='date' name='date' ordinal='7' />
-            <column datatype='string' name='sentence' ordinal='8' />
+        <relation connection='textscan.1q4pq6w1ttsmeq191s6jc03v2cmz' name='sample_data.csv' table='[sample_data#csv]' type='table'>
+          <columns character-set='UTF-16LE' header='yes' locale='en' separator='&#9;' text-qualifier='&quot;'>
+            <column datatype='string' name='review_color' ordinal='0' />
+            <column datatype='integer' name='Rating: transformed' ordinal='1' />
+            <column datatype='string' name='Title' ordinal='2' />
+            <column datatype='integer' name='Total apps' ordinal='3' />
+            <column datatype='string' name='Other apps' ordinal='4' />
+            <column datatype='string' name='feature' ordinal='5' />
+            <column datatype='integer' name='Number of Records' ordinal='6' />
+            <column datatype='string' name='QY' ordinal='7' />
+            <column datatype='string' name='app' ordinal='8' />
+            <column datatype='string' name='Quarter' ordinal='9' />
+            <column datatype='date' name='date' ordinal='10' />
+            <column datatype='string' name='pattern' ordinal='11' />
+            <column datatype='integer' name='Rating: original' ordinal='12' />
+            <column datatype='string' name='review' ordinal='13' />
+            <column datatype='string' name='review_id' ordinal='14' />
+            <column datatype='integer' name='review_sentiment' ordinal='15' />
+            <column datatype='string' name='sentence' ordinal='16' />
           </columns>
         </relation>
         <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-16LE&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;¤&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en&quot;</attribute>
+              <attribute datatype='string' name='quote-char'>&quot;\&quot;&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
           <metadata-record class='column'>
-            <remote-name>F1</remote-name>
-            <remote-type>20</remote-type>
-            <local-name>[F1]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>F1</remote-alias>
+            <remote-name>review_color</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[review_color]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>review_color</remote-alias>
             <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating: transformed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rating: transformed]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Rating: transformed</remote-alias>
+            <ordinal>1</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>app</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[app]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>app</remote-alias>
-            <ordinal>1</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>review_id</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[review_id]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>review_id</remote-alias>
+            <remote-name>Title</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Title]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Title</remote-alias>
             <ordinal>2</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
             <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
+            <collation flag='0' name='LEN_RGB' />
           </metadata-record>
           <metadata-record class='column'>
-            <remote-name>pattern</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[pattern]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>pattern</remote-alias>
-            <ordinal>3</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>review</remote-name>
-            <remote-type>130</remote-type>
-            <local-name>[review]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>review</remote-alias>
-            <ordinal>4</ordinal>
-            <local-type>string</local-type>
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>rating</remote-name>
+            <remote-name>Total apps</remote-name>
             <remote-type>20</remote-type>
-            <local-name>[rating]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>rating</remote-alias>
-            <ordinal>5</ordinal>
+            <local-name>[Total apps]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Total apps</remote-alias>
+            <ordinal>3</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Other apps</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Other apps]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Other apps</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>feature</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[feature]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>feature</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Number of Records</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Number of Records]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Number of Records</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>QY</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[QY]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>QY</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>app</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[app]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>app</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Quarter</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Quarter]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Quarter</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pattern</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pattern]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>pattern</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Rating: original</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Rating: original]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>Rating: original</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[review]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>review</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>review_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[review_id]</local-name>
+            <parent-name>[sample_data.csv]</parent-name>
+            <remote-alias>review_id</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>review_sentiment</remote-name>
             <remote-type>20</remote-type>
             <local-name>[review_sentiment]</local-name>
-            <parent-name>[final_data]</parent-name>
+            <parent-name>[sample_data.csv]</parent-name>
             <remote-alias>review_sentiment</remote-alias>
-            <ordinal>6</ordinal>
+            <ordinal>15</ordinal>
             <local-type>integer</local-type>
             <aggregation>Sum</aggregation>
             <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='column'>
-            <remote-name>date</remote-name>
-            <remote-type>7</remote-type>
-            <local-name>[date]</local-name>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias>date</remote-alias>
-            <ordinal>7</ordinal>
-            <local-type>date</local-type>
-            <aggregation>Year</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
-            </attributes>
           </metadata-record>
           <metadata-record class='column'>
             <remote-name>sentence</remote-name>
-            <remote-type>130</remote-type>
+            <remote-type>129</remote-type>
             <local-name>[sentence]</local-name>
-            <parent-name>[final_data]</parent-name>
+            <parent-name>[sample_data.csv]</parent-name>
             <remote-alias>sentence</remote-alias>
-            <ordinal>8</ordinal>
+            <ordinal>16</ordinal>
             <local-type>string</local-type>
             <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
             <contains-null>true</contains-null>
-            <collation flag='1' name='LEN_S2' />
-            <attributes>
-              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
-            </attributes>
-          </metadata-record>
-          <metadata-record class='capability'>
-            <remote-name />
-            <remote-type>0</remote-type>
-            <parent-name>[final_data]</parent-name>
-            <remote-alias />
-            <aggregation>Count</aggregation>
-            <contains-null>true</contains-null>
-            <attributes>
-              <attribute datatype='integer' name='context'>2</attribute>
-              <attribute datatype='string' name='gridOrigin'>&quot;A1:I4141:no:A1:I4141:0&quot;</attribute>
-              <attribute datatype='boolean' name='header'>true</attribute>
-              <attribute datatype='integer' name='outcome'>6</attribute>
-            </attributes>
+            <collation flag='0' name='LEN_RGB' />
           </metadata-record>
         </metadata-records>
       </connection>
@@ -194,7 +295,7 @@
         <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:max([FIS: feat. volume all apps (copy)])}' />
       </column>
       <column caption='App: number reviews per quarter' datatype='integer' name='[Calculation_1792362323347095558]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='{FIXED [app],[Quarter (copy)]: COUNTd([review_id])}' />
+        <calculation class='tableau' formula='{FIXED [app],[QY]: COUNTd([review_id])}' />
       </column>
       <column caption='% reviews' datatype='real' name='[Calculation_1792362323348353031]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='[FIS: feat. volume all apps (copy)]/[Calculation_1792362323347095558]' />
@@ -202,20 +303,11 @@
       <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
       </column>
-      <column caption='Rating: transformed' datatype='integer' name='[Calculation_3328934231155302400]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='CASE [rating]&#10;    when 1 then -2&#10;    when 2 then -1&#10;    when 3 then 0&#10;    when 4 then 1&#10;    when 5 then 2&#10;&#10;end' />
-      </column>
       <column aggregation='Attribute' caption='Apps with feature' datatype='integer' name='[Calculation_3328934231520051201]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='{ EXCLUDE  [app]:&#10;COUNTD([app])&#10;&#10;}' />
       </column>
-      <column caption='Title' datatype='string' name='[Calculation_4233102215890808833]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [app] = &quot;None&quot; then &quot;Teste&quot;&#10;ELSE &quot;Reviews for &quot; + [app] + &quot; mentioning &quot; + [pattern] + &quot;:&quot; end' />
-      </column>
       <column aggregation='Attribute' caption='FPS: sum sent x volume' datatype='real' name='[Calculation_487162871686516737]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='{ EXCLUDE app: sum(ABS([Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]))}' />
-      </column>
-      <column caption='FPS: sent x volume' datatype='real' name='[Calculation_487162871686881282]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='[Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]' />
       </column>
       <column caption='FPS' datatype='real' name='[Calculation_487162871687270403]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='[Calculation_5695012884745781248]*[FIS: feat. volume all apps (copy)]/[Calculation_487162871686516737]' />
@@ -226,14 +318,8 @@
       <column aggregation='Attribute' caption='Y: Feature uniqueness' datatype='string' name='[Calculation_5156621625105870848]' role='measure' type='nominal'>
         <calculation class='tableau' formula='IF [Calculation_3328934231520051201] == [Parameters].[Parameter 1]&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] == 1 and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features unique to &quot; + [Parameters].[Parâmetro 1]&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} =0&#10;then &quot;Features unique to competition&quot;&#10;&#10;else &quot;Features unique to competition&quot; end' />
       </column>
-      <column caption='Total apps' datatype='integer' name='[Calculation_5156621625107578881]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='COUNTD([app])' />
-      </column>
-      <column caption='Other apps' datatype='string' name='[Calculation_5156621625113882627]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='IF [app] != [Parameters].[Parâmetro 1] then &quot;Competition&quot; end' />
-      </column>
       <column caption='FPS: feat. sent. per app' datatype='real' name='[Calculation_5695012884745781248]' role='measure' type='quantitative'>
-        <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Calculation_3328934231155302400])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
+        <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Rating: transformed])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
       </column>
       <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
         <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
@@ -241,7 +327,6 @@
       <column caption='feature' datatype='string' name='[Calculation_6807542742974251008]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='pattern' />
       </column>
-      <column datatype='integer' hidden='true' name='[F1]' role='measure' type='quantitative' />
       <column caption='FPS: feat. volume per app' datatype='integer' name='[FIS: feat. volume all apps (copy)]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='{ INCLUDE [app], [pattern]: COUNTD([review_id])}' />
       </column>
@@ -251,35 +336,26 @@
       <column aggregation='Attribute' caption='Feat freq: Min freq' datatype='integer' name='[Feat freq: Max freq (copy)]' role='measure' type='quantitative'>
         <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:min([FIS: feat. volume all apps (copy)])}' />
       </column>
-      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
-        <calculation class='tableau' formula='1' />
-      </column>
-      <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
-      </column>
-      <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
-      <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
-        <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
-      </column>
-      <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
-      <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
-      <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
-        <aliases>
-          <alias key='1' value='1✮' />
-          <alias key='2' value='2✮' />
-          <alias key='3' value='3✮' />
-          <alias key='4' value='4✮' />
-          <alias key='5' value='5✮' />
-        </aliases>
-      </column>
-      <column caption='review' datatype='string' name='[review]' role='dimension' type='nominal' />
-      <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
-      <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec' />
+      <column caption='App' datatype='string' name='[app]' role='dimension' type='nominal' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Feature' datatype='string' name='[feature]' role='dimension' type='nominal' />
+      <column caption='Pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+      <column caption='Review' datatype='string' name='[review]' role='dimension' type='nominal' />
+      <column caption='Review Color' datatype='string' name='[review_color]' role='dimension' type='nominal' />
+      <column caption='Review Id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+      <column caption='Review Sentiment' datatype='integer' name='[review_sentiment]' role='measure' type='quantitative' />
+      <column caption='Sentence' datatype='string' name='[sentence]' role='dimension' type='nominal' />
       <column-instance column='[Calculation_50313703186886656]' derivation='Attribute' name='[attr:Calculation_50313703186886656:nk]' pivot='key' type='nominal' />
       <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
       <column-instance column='[app]' derivation='None' name='[none:app:nk]' pivot='key' type='nominal' />
       <column-instance column='[pattern]' derivation='None' name='[none:pattern:nk]' pivot='key' type='nominal' />
-      <column-instance column='[review_sentiment]' derivation='None' name='[none:review_sentiment:ok]' pivot='key' type='ordinal' />
+      <group caption='Action (App,Pattern)' hidden='true' name='[Action (App,Pattern)]' name-style='unqualified' user:auto-column='sheet_link'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[app]' />
+          <groupfilter function='level-members' level='[pattern]' />
+        </groupfilter>
+      </group>
       <group caption='Action (app)' hidden='true' name='[Action (app)]' name-style='unqualified' user:auto-column='sheet_link'>
         <groupfilter function='crossjoin'>
           <groupfilter function='level-members' level='[app]' />
@@ -313,494 +389,21 @@
           <groupfilter function='level-members' level='[none:pattern:nk]' />
         </groupfilter>
       </group>
+      <group caption='Tooltip (App,Pattern)' hidden='true' name='[Tooltip (App,Pattern)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[app]' />
+          <groupfilter function='level-members' level='[pattern]' />
+        </groupfilter>
+      </group>
       <group caption='Tooltip (app,pattern)' hidden='true' name='[Tooltip (app,pattern)]' name-style='unqualified' user:auto-column='sheet_link' user:ui-vit-column='true'>
         <groupfilter function='crossjoin'>
           <groupfilter function='level-members' level='[app]' />
           <groupfilter function='level-members' level='[pattern]' />
         </groupfilter>
       </group>
-      <extract count='-1' enabled='false' units='records'>
-        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='/var/folders/n5/rt18wqy54d3_lp2bbd44qyd40000gn/T/tableau-temp/3275430782/Data/Extracts/federated_0pl0ds504pxp4d17jiqzv1.hyper' schema='Extract' sslmode='' tablename='Extract' update-time='03/07/2018 04:15:14 PM' username='tableau_internal_user'>
-          <relation name='Extract' table='[Extract].[Extract]' type='table' />
-          <refresh>
-            <refresh-event add-from-file-path='' increment-value='%null%' refresh-type='create' rows-inserted='3267' timestamp-start='2018-03-07 16:15:14.787' />
-          </refresh>
-          <metadata-records>
-            <metadata-record class='column'>
-              <remote-name>app</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[app]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>app</remote-alias>
-              <ordinal>0</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>3</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>review_id</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[review_id]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>review_id</remote-alias>
-              <ordinal>1</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>3267</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>pattern</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[pattern]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>pattern</remote-alias>
-              <ordinal>2</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>70</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>sentence_id</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[sentence_id]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>sentence_id</remote-alias>
-              <ordinal>3</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>19</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>title</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[title]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>title</remote-alias>
-              <ordinal>4</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2161</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>review</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[review]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>review</remote-alias>
-              <ordinal>5</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>3267</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>rating</remote-name>
-              <remote-type>20</remote-type>
-              <local-name>[rating]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>rating</remote-alias>
-              <ordinal>6</ordinal>
-              <family>final_data</family>
-              <local-type>integer</local-type>
-              <aggregation>Sum</aggregation>
-              <approx-count>5</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>sentiment</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[sentiment]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>sentiment</remote-alias>
-              <ordinal>7</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>3</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>date</remote-name>
-              <remote-type>133</remote-type>
-              <local-name>[date]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>date</remote-alias>
-              <ordinal>8</ordinal>
-              <family>final_data</family>
-              <local-type>date</local-type>
-              <aggregation>Year</aggregation>
-              <approx-count>327</approx-count>
-              <contains-null>true</contains-null>
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>app_version</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[app_version]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>app_version</remote-alias>
-              <ordinal>9</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>60</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-            <metadata-record class='column'>
-              <remote-name>author</remote-name>
-              <remote-type>129</remote-type>
-              <local-name>[author]</local-name>
-              <parent-name>[Extract]</parent-name>
-              <remote-alias>author</remote-alias>
-              <ordinal>10</ordinal>
-              <family>final_data</family>
-              <local-type>string</local-type>
-              <aggregation>Count</aggregation>
-              <approx-count>2522</approx-count>
-              <contains-null>true</contains-null>
-              <collation flag='1' name='LEN_S2' />
-            </metadata-record>
-          </metadata-records>
-        </connection>
-      </extract>
-      <layout dim-ordering='alphabetic' dim-percentage='0.38193' measure-ordering='alphabetic' measure-percentage='0.480493' parameter-percentage='0.137577' show-aliased-fields='true' show-structure='true' user-set-layout='true' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.463415' measure-ordering='alphabetic' measure-percentage='0.365854' parameter-percentage='0.170732' show-structure='true' />
       <style>
         <style-rule element='mark'>
-          <encoding attr='color' field='[none:pattern:nk]' palette='tableau-20' type='palette'>
-            <map to='#17becf'>
-              <bucket>&quot;previous version&quot;</bucket>
-            </map>
-            <map to='#1f77b4'>
-              <bucket>&quot;ability select&quot;</bucket>
-            </map>
-            <map to='#1f77b4'>
-              <bucket>&quot;able edit&quot;</bucket>
-            </map>
-            <map to='#1f77b4'>
-              <bucket>&quot;none&quot;</bucket>
-            </map>
-            <map to='#1f77b4'>
-              <bucket>&quot;raw file&quot;</bucket>
-            </map>
-            <map to='#2ca02c'>
-              <bucket>&quot;desktop mobile&quot;</bucket>
-            </map>
-            <map to='#2ca02c'>
-              <bucket>&quot;social media&quot;</bucket>
-            </map>
-            <map to='#499894'>
-              <bucket>&quot;qrcode photo&quot;</bucket>
-            </map>
-            <map to='#499894'>
-              <bucket>&quot;white background&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;new interface&quot;</bucket>
-            </map>
-            <map to='#4e79a7'>
-              <bucket>&quot;photo edit&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;clone stamp&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;curve tool&quot;</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>&quot;new layout&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;social medium&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;green dot&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;look amazing&quot;</bucket>
-            </map>
-            <map to='#79706e'>
-              <bucket>&quot;new tool&quot;</bucket>
-            </map>
-            <map to='#7f7f7f'>
-              <bucket>&quot;option hsl&quot;</bucket>
-            </map>
-            <map to='#7f7f7f'>
-              <bucket>&quot;photo load&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;new look&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;purchase preset&quot;</bucket>
-            </map>
-            <map to='#86bcb6'>
-              <bucket>&quot;update x&quot;</bucket>
-            </map>
-            <map to='#8c564b'>
-              <bucket>&quot;hdr image&quot;</bucket>
-            </map>
-            <map to='#8c564b'>
-              <bucket>&quot;import photo&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;favorite editing&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;like new&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;photo editor&quot;</bucket>
-            </map>
-            <map to='#8cd17d'>
-              <bucket>&quot;recent update&quot;</bucket>
-            </map>
-            <map to='#9467bd'>
-              <bucket>&quot;editing tool&quot;</bucket>
-            </map>
-            <map to='#98df8a'>
-              <bucket>&quot;desktop version&quot;</bucket>
-            </map>
-            <map to='#9c755f'>
-              <bucket>&quot;sync computer&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;screen scan&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;tool provide&quot;</bucket>
-            </map>
-            <map to='#9d7660'>
-              <bucket>&quot;useful feature&quot;</bucket>
-            </map>
-            <map to='#9edae5'>
-              <bucket>&quot;professional photographer&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;shoot raw&quot;</bucket>
-            </map>
-            <map to='#a0cbe8'>
-              <bucket>&quot;toning option&quot;</bucket>
-            </map>
-            <map to='#aec7e8'>
-              <bucket>&quot;camera roll&quot;</bucket>
-            </map>
-            <map to='#aec7e8'>
-              <bucket>&quot;raw photo&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;late update&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;new feature&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;picture look&quot;</bucket>
-            </map>
-            <map to='#b07aa1'>
-              <bucket>&quot;scan code&quot;</bucket>
-            </map>
-            <map to='#b6992d'>
-              <bucket>&quot;open photo&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;favorite photo&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;improve photo&quot;</bucket>
-            </map>
-            <map to='#bcbd22'>
-              <bucket>&quot;photo re-add&quot;</bucket>
-            </map>
-            <map to='#bcbd22'>
-              <bucket>&quot;photo sync&quot;</bucket>
-            </map>
-            <map to='#c49c94'>
-              <bucket>&quot;mobile version&quot;</bucket>
-            </map>
-            <map to='#c49c94'>
-              <bucket>&quot;new ui&quot;</bucket>
-            </map>
-            <map to='#c5b0d5'>
-              <bucket>&quot;feature desktop&quot;</bucket>
-            </map>
-            <map to='#c5b0d5'>
-              <bucket>&quot;photo iphone&quot;</bucket>
-            </map>
-            <map to='#c7c7c7'>
-              <bucket>&quot;photo phone&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;filter screen&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;long time&quot;</bucket>
-            </map>
-            <map to='#d37295'>
-              <bucket>&quot;multiple photo&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;error loading&quot;</bucket>
-            </map>
-            <map to='#d4a6c8'>
-              <bucket>&quot;scan qrcode&quot;</bucket>
-            </map>
-            <map to='#d62728'>
-              <bucket>&quot;edit photo&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;loading content&quot;</bucket>
-            </map>
-            <map to='#d7b5a6'>
-              <bucket>&quot;split toning&quot;</bucket>
-            </map>
-            <map to='#dbdb8d'>
-              <bucket>&quot;portrait mode&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;add feature&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;color split&quot;</bucket>
-            </map>
-            <map to='#e377c2'>
-              <bucket>&quot;new update&quot;</bucket>
-            </map>
-            <map to='#edc948'>
-              <bucket>&quot;edit picture&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;healing option&quot;</bucket>
-            </map>
-            <map to='#f1ce63'>
-              <bucket>&quot;save photo&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;new phone&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;old version&quot;</bucket>
-            </map>
-            <map to='#f7b6d2'>
-              <bucket>&quot;light room&quot;</bucket>
-            </map>
-            <map to='#f7b6d2'>
-              <bucket>&quot;noise reduction&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;gradient mask&quot;</bucket>
-            </map>
-            <map to='#fabfd2'>
-              <bucket>&quot;old filter&quot;</bucket>
-            </map>
-            <map to='#ff7f0e'>
-              <bucket>&quot;creative cloud&quot;</bucket>
-            </map>
-            <map to='#ff7f0e'>
-              <bucket>&quot;sync desktop&quot;</bucket>
-            </map>
-            <map to='#ff9896'>
-              <bucket>&quot;edit raw&quot;</bucket>
-            </map>
-            <map to='#ff9896'>
-              <bucket>&quot;iphone x&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;double exposure&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;easy photo&quot;</bucket>
-            </map>
-            <map to='#ff9d9a'>
-              <bucket>&quot;free filter&quot;</bucket>
-            </map>
-            <map to='#ff9da7'>
-              <bucket>&quot;raw image&quot;</bucket>
-            </map>
-            <map to='#ffbb78'>
-              <bucket>&quot;customer service&quot;</bucket>
-            </map>
-            <map to='#ffbb78'>
-              <bucket>&quot;photo editing&quot;</bucket>
-            </map>
-            <map to='#ffbb78'>
-              <bucket>&quot;user friendly&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;photo look&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;server error&quot;</bucket>
-            </map>
-            <map to='#ffbe7d'>
-              <bucket>&quot;tool add&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:review_sentiment:ok]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>-2</bucket>
-            </map>
-            <map to='#59a14f'>
-              <bucket>2</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>1</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>0</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>-1</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[attr:Calculation_50313703186886656:nk]' type='palette'>
-            <map to='#59a14f'>
-              <bucket>&quot;Strength&quot;</bucket>
-            </map>
-            <map to='#76b7b2'>
-              <bucket>&quot;Opportunity&quot;</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>%null%</bucket>
-            </map>
-            <map to='#bab0ac'>
-              <bucket>&quot;Others&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;Weakness&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Threat&quot;</bucket>
-            </map>
-          </encoding>
-          <encoding attr='color' field='[none:app:nk]' type='palette'>
-            <map to='#4e79a7'>
-              <bucket>&quot;Badoo&quot;</bucket>
-            </map>
-            <map to='#e15759'>
-              <bucket>&quot;POF&quot;</bucket>
-            </map>
-            <map to='#f28e2b'>
-              <bucket>&quot;Bumble&quot;</bucket>
-            </map>
-          </encoding>
           <encoding attr='color' field='[none:Calculation_3094254478144913408:nk]' type='palette'>
             <map to='#59a14f'>
               <bucket>&quot;positive&quot;</bucket>
@@ -812,11 +415,25 @@
               <bucket>&quot;neutral&quot;</bucket>
             </map>
           </encoding>
+          <encoding attr='color' field='[attr:Calculation_50313703186886656:nk]' type='palette'>
+            <map to='#59a14f'>
+              <bucket>&quot;Strength&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;Opportunity&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Others&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Weakness&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Threat&quot;</bucket>
+            </map>
+          </encoding>
         </style-rule>
       </style>
-      <semantic-values>
-        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
-      </semantic-values>
       <date-options start-of-week='monday' />
       <datasource-dependencies datasource='Parameters'>
         <column caption='Par: total apps' datatype='integer' name='[Parameter 1]' param-domain-type='range' role='measure' type='quantitative' value='3'>
@@ -846,19 +463,19 @@
     <action caption='Filter2' name='[Action2]'>
       <activation auto-clear='true' type='on-select' />
       <source dashboard='ReSWOT' type='sheet' worksheet='All apps' />
-      <link caption='Filter2' delimiter=',' escape='\' expression='tsl:All%20apps?%5Bfederated.0pl0ds504pxp4d17jiqzv1ob5yek%5D.%5BCalculation_6807542742974251008%5D~s0=&lt;[pattern]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
+      <link caption='Filter2' delimiter=',' escape='\' expression='tsl:All%20apps?%5Bfederated.1h7i9eb1yvqkb41dgh2ct1qj85tc%5D.%5BCalculation_6807542742974251008%5D~s0=&lt;[pattern]~na&gt;' include-null='true' multi-select='true' url-escape='true' />
       <command command='tsc:tsl-filter'>
         <param name='target' value='All apps' />
       </command>
     </action>
     <datasources>
-      <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+      <datasource caption='sample_data' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' />
     </datasources>
-    <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+    <datasource-dependencies datasource='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc'>
       <column caption='feature' datatype='string' name='[Calculation_6807542742974251008]' role='dimension' type='nominal'>
         <calculation class='tableau' formula='pattern' />
       </column>
-      <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+      <column caption='Pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
     </datasource-dependencies>
   </actions>
   <worksheets>
@@ -866,7 +483,7 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+            <datasource caption='sample_data' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' />
             <datasource name='Parameters' />
           </datasources>
           <datasource-dependencies datasource='Parameters'>
@@ -881,18 +498,15 @@
               <calculation class='tableau' formula='&quot;lightroom&quot;' />
             </column>
           </datasource-dependencies>
-          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+          <datasource-dependencies datasource='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc'>
             <column aggregation='Attribute' caption='Feat freq: Max freq' datatype='integer' name='[CALC: Pattern frequency (copy)]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:max([FIS: feat. volume all apps (copy)])}' />
             </column>
             <column caption='App: number reviews per quarter' datatype='integer' name='[Calculation_1792362323347095558]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='{FIXED [app],[Quarter (copy)]: COUNTd([review_id])}' />
+              <calculation class='tableau' formula='{FIXED [app],[QY]: COUNTd([review_id])}' />
             </column>
             <column caption='% reviews' datatype='real' name='[Calculation_1792362323348353031]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='[FIS: feat. volume all apps (copy)]/[Calculation_1792362323347095558]' />
-            </column>
-            <column caption='Rating: transformed' datatype='integer' name='[Calculation_3328934231155302400]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='CASE [rating]&#10;    when 1 then -2&#10;    when 2 then -1&#10;    when 3 then 0&#10;    when 4 then 1&#10;    when 5 then 2&#10;&#10;end' />
             </column>
             <column aggregation='Attribute' caption='Apps with feature' datatype='integer' name='[Calculation_3328934231520051201]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='{ EXCLUDE  [app]:&#10;COUNTD([app])&#10;&#10;}' />
@@ -910,7 +524,7 @@
               <calculation class='tableau' formula='IF [Calculation_3328934231520051201] == [Parameters].[Parameter 1]&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] == 1 and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features unique to &quot; + [Parameters].[Parâmetro 1]&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} &gt;0&#10;then &quot;Features in common&quot;&#10;&#10;ELSEIF [Calculation_3328934231520051201] &lt; [Parameters].[Parameter 1] and&#10;{EXCLUDE [app]: COUNT(if [app]== [Parameters].[Parâmetro 1] then 1 END)} =0&#10;then &quot;Features unique to competition&quot;&#10;&#10;else &quot;Features unique to competition&quot; end' />
             </column>
             <column caption='FPS: feat. sent. per app' datatype='real' name='[Calculation_5695012884745781248]' role='measure' type='quantitative'>
-              <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Calculation_3328934231155302400])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
+              <calculation class='tableau' formula='ifnull({ INCLUDE [app], [pattern]:sum([Rating: transformed])},0)/&#10;(2*{ INCLUDE [app], [pattern]: countd([review_id])})' />
             </column>
             <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
               <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
@@ -927,10 +541,9 @@
             <column aggregation='Attribute' caption='Feat freq: Min freq' datatype='integer' name='[Feat freq: Max freq (copy)]' role='measure' type='quantitative'>
               <calculation class='tableau' formula='{ exclude [app], [pattern], [Calculation_6807542742974251008]:min([FIS: feat. volume all apps (copy)])}' />
             </column>
-            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
-            </column>
-            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column datatype='string' name='[QY]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Rating: transformed]' role='measure' type='quantitative' />
+            <column caption='App' datatype='string' name='[app]' role='dimension' type='nominal' />
             <column-instance column='[CALC: Pattern frequency (copy)]' derivation='Attribute' name='[attr:CALC: Pattern frequency (copy):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1792362323347095558]' derivation='Attribute' name='[attr:Calculation_1792362323347095558:qk]' pivot='key' type='quantitative' />
             <column-instance column='[Calculation_1792362323348353031]' derivation='Attribute' name='[attr:Calculation_1792362323348353031:qk]' pivot='key' type='quantitative' />
@@ -941,52 +554,39 @@
             <column-instance column='[FIS: feat. volume all apps (copy)]' derivation='Attribute' name='[attr:FIS: feat. volume all apps (copy):qk]' pivot='key' type='quantitative' />
             <column-instance column='[FPS (copy)]' derivation='Attribute' name='[attr:FPS (copy):qk]' pivot='key' type='quantitative' />
             <column-instance column='[Feat freq: Max freq (copy)]' derivation='Attribute' name='[attr:Feat freq: Max freq (copy):qk]' pivot='key' type='quantitative' />
-            <column-instance column='[Quarter (copy)]' derivation='Attribute' name='[attr:Quarter (copy):nk]' pivot='key' type='nominal' />
-            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
-            </column>
-            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
-            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[QY]' derivation='Attribute' name='[attr:QY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[QY]' derivation='None' name='[none:QY:nk]' pivot='key' type='nominal' />
             <column-instance column='[app]' derivation='None' name='[none:app:nk]' pivot='key' type='nominal' />
             <column-instance column='[pattern]' derivation='None' name='[none:pattern:nk]' pivot='key' type='nominal' />
-            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
-            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
-              <aliases>
-                <alias key='1' value='1✮' />
-                <alias key='2' value='2✮' />
-                <alias key='3' value='3✮' />
-                <alias key='4' value='4✮' />
-                <alias key='5' value='5✮' />
-              </aliases>
-            </column>
-            <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+            <column caption='Pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column caption='Review Id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
             <column-instance column='[FIS: feat. volume all apps (copy)]' derivation='Sum' name='[sum:FIS: feat. volume all apps (copy):qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (feature)]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (feature)]'>
             <groupfilter function='level-members' level='[Calculation_6807542742974251008]' user:ui-action-filter='[Action2]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]'>
             <groupfilter function='level-members' level='[attr:Calculation_50313703186886656:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_6254374024476311552:nk]'>
             <groupfilter function='level-members' level='[attr:Calculation_6254374024476311552:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
-            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:QY:nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]'>
             <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
               <groupfilter function='level-members' level='[none:pattern:nk]' />
               <groupfilter function='member' level='[none:pattern:nk]' member='&quot;none&quot;' />
             </groupfilter>
           </filter>
-          <sort class='computed' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' direction='DESC' using='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[sum:FIS: feat. volume all apps (copy):qk]' />
+          <sort class='computed' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' direction='DESC' using='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[sum:FIS: feat. volume all apps (copy):qk]' />
           <slices>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (feature)]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_6254374024476311552:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (feature)]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]</column>
           </slices>
           <aggregation value='true' />
         </view>
@@ -995,36 +595,36 @@
             <format attr='tick-color' value='#00000000' />
           </style-rule>
           <style-rule element='cell'>
-            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='8' />
+            <format attr='font-size' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='8' />
             <format attr='font-size' value='9' />
-            <format attr='font-weight' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='normal' />
+            <format attr='font-weight' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='normal' />
             <format attr='font-weight' value='normal' />
             <format attr='font-weight' data-class='subtotal' value='normal' />
             <format attr='font-weight' data-class='total' value='bold' />
             <format attr='font-weight' data-class='subtotal' scope='rows' value='normal' />
             <format attr='font-weight' data-class='subtotal' scope='cols' value='normal' />
             <format attr='font-weight' data-class='total' scope='cols' value='bold' />
-            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]' value='n#,##0.0;-#,##0.0' />
-            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]' value='n#,##0.0;-#,##0.0' />
-            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]' value='p0.0%' />
+            <format attr='text-format' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_487162871687270403:qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FPS (copy):qk]' value='n#,##0.0;-#,##0.0' />
+            <format attr='text-format' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_1792362323348353031:qk]' value='p0.0%' />
           </style-rule>
           <style-rule element='header'>
-            <format attr='height' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]' value='28' />
+            <format attr='height' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_5156621625105870848:nk]' value='28' />
             <format attr='border-style' data-class='subtotal' value='none' />
             <format attr='font-weight' data-class='subtotal' scope='cols' value='bold' />
             <format attr='font-weight' data-class='total' scope='cols' value='bold' />
           </style-rule>
           <style-rule element='label'>
-            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]' value='0' />
+            <format attr='text-orientation' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:app:nk]' value='0' />
             <format attr='font-weight' value='bold' />
-            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='8' />
-            <format attr='font-weight' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='normal' />
+            <format attr='font-size' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='8' />
+            <format attr='font-weight' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='normal' />
             <format attr='font-weight' scope='rows' value='bold' />
-            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='center' />
+            <format attr='text-align' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='center' />
             <format attr='font-weight' scope='cols' value='bold' />
-            <format attr='wrap' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='on' />
-            <format attr='vertical-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='center' />
-            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' value='0' />
+            <format attr='wrap' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='on' />
+            <format attr='vertical-align' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='center' />
+            <format attr='text-orientation' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' value='0' />
           </style-rule>
           <style-rule element='pane'>
             <format attr='border-style' data-class='subtotal' value='none' />
@@ -1049,32 +649,32 @@
             <format attr='line-visibility' scope='rows' value='off' />
           </style-rule>
           <style-rule element='legend-title-text'>
-            <format attr='color' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='Legend - SWOT'>
+            <format attr='color' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' value='Legend - SWOT'>
               <formatted-text>
                 <run>Legend - SWOT</run>
               </formatted-text>
             </format>
           </style-rule>
           <style-rule element='quick-filter'>
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' value='Filter by feature volume'>
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_6254374024476311552:nk]' value='Filter by feature volume'>
               <formatted-text>
                 <run>Filter by feature volume</run>
               </formatted-text>
             </format>
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]' value='Issues uniqueness' />
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' value='Filter by quarter'>
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_5156621625105870848:nk]' value='Issues uniqueness' />
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]' value='Filter by quarter'>
               <formatted-text>
                 <run>Filter by quarter</run>
               </formatted-text>
             </format>
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='Filter by SWOT'>
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' value='Filter by SWOT'>
               <formatted-text>
                 <run>Filter by SWOT</run>
               </formatted-text>
             </format>
           </style-rule>
           <style-rule element='data-highlighter-title'>
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' value='SWOT' />
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' value='SWOT' />
           </style-rule>
         </style>
         <panes>
@@ -1084,42 +684,42 @@
             </view>
             <mark class='Circle' />
             <encodings>
-              <size column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Feat freq: Max freq (copy):qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:CALC: Pattern frequency (copy):qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323347095558:qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Quarter (copy):nk]' />
-              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' />
-              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]' />
+              <size column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FIS: feat. volume all apps (copy):qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_487162871687270403:qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FPS (copy):qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_6254374024476311552:nk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Feat freq: Max freq (copy):qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:CALC: Pattern frequency (copy):qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FIS: feat. volume all apps (copy):qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_1792362323347095558:qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_1792362323348353031:qk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:QY:nk]' />
+              <text column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' />
+              <color column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]' />
             </encodings>
             <customized-tooltip>
               <formatted-text>
-                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]&gt; </run>
+                <run bold='true'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]&gt; </run>
                 <run> is mentioned in </run>
-                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FIS: feat. volume all apps (copy):qk]&gt;/&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323347095558:qk]&gt; (&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_1792362323348353031:qk]&gt;)</run>
+                <run bold='true'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FIS: feat. volume all apps (copy):qk]&gt;/&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_1792362323347095558:qk]&gt; (&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_1792362323348353031:qk]&gt;)</run>
                 <run> &#10;of the reviews of </run>
-                <run bold='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]&gt;</run>
+                <run bold='true'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:app:nk]&gt;</run>
                 <run> in this period.</run>
                 <run fontalignment='1'>&#10;&lt;Sheet name=&quot;Ratings&quot; maxwidth=&quot;150&quot; maxheight=&quot;100&quot; filter=&quot;&lt;All Fields&gt;&quot;&gt;&#10;&#10;</run>
-                <run fontalignment='1' underline='true'>Feature performance score for &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]&gt;</run>
+                <run fontalignment='1' underline='true'>Feature performance score for &lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]&gt;</run>
                 <run fontalignment='1'>Æ&#10;</run>
-                <run bold='true' fontalignment='1'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]&gt;</run>
-                <run fontalignment='1'>: &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_487162871687270403:qk]&gt; | </run>
+                <run bold='true' fontalignment='1'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:app:nk]&gt;</run>
+                <run fontalignment='1'>: &lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_487162871687270403:qk]&gt; | </run>
                 <run bold='true' fontalignment='1'>market</run>
-                <run fontalignment='1'>: &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:FPS (copy):qk]&gt;</run>
+                <run fontalignment='1'>: &lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:FPS (copy):qk]&gt;</run>
               </formatted-text>
             </customized-tooltip>
             <customized-label>
               <formatted-text>
                 <run>&lt;</run>
-                <run>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:pattern:nk]</run>
+                <run>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:pattern:nk]</run>
                 <run>&gt;</run>
               </formatted-text>
             </customized-label>
@@ -1151,8 +751,8 @@
             </style>
           </pane>
         </panes>
-        <rows>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_5156621625105870848:nk]</rows>
-        <cols>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:app:nk]</cols>
+        <rows>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_5156621625105870848:nk]</rows>
+        <cols>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:app:nk]</cols>
       </table>
     </worksheet>
     <worksheet name='Ratings'>
@@ -1166,59 +766,52 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+            <datasource caption='sample_data' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' />
           </datasources>
-          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+          <datasource-dependencies datasource='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc'>
             <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
             </column>
-            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
-            </column>
-            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
-            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
-            </column>
-            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column datatype='string' name='[QY]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Rating: original]' role='measure' type='quantitative' />
+            <column caption='App' datatype='string' name='[app]' role='dimension' type='nominal' />
             <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
-            <column-instance column='[rating]' derivation='None' name='[none:rating:ok]' pivot='key' type='ordinal' />
-            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
-            <column-instance column='[rating]' derivation='Count' name='[pcto:cnt:rating:qk]' pivot='key' type='quantitative'>
+            <column-instance column='[QY]' derivation='None' name='[none:QY:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Rating: original]' derivation='None' name='[none:Rating: original:ok]' pivot='key' type='ordinal' />
+            <column caption='Pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column-instance column='[Rating: original]' derivation='Count' name='[pcto:cnt:Rating: original:qk]' pivot='key' type='quantitative'>
               <table-calc ordering-type='Rows' type='PctTotal' />
             </column-instance>
-            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
-              <aliases>
-                <alias key='1' value='1✮' />
-                <alias key='2' value='2✮' />
-                <alias key='3' value='3✮' />
-                <alias key='4' value='4✮' />
-                <alias key='5' value='5✮' />
-              </aliases>
-            </column>
-            <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
+            <column caption='Review Sentiment' datatype='integer' name='[review_sentiment]' role='measure' type='quantitative' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Tooltip (app,pattern)]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Tooltip (App,Pattern)]'>
             <groupfilter function='crossjoin' user:ui-action-filter='[Action - Ratings]' user:ui-enumeration='all' user:ui-marker='enumerate'>
               <groupfilter function='level-members' level='[app]' />
               <groupfilter function='level-members' level='[pattern]' />
             </groupfilter>
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
-            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Tooltip (app,pattern)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action - Ratings]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[app]' />
+              <groupfilter function='level-members' level='[pattern]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:QY:nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Tooltip (app,pattern)]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Tooltip (app,pattern)]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Tooltip (App,Pattern)]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
           <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' field-type='quantitative' major-show='false' minor-show='false' scope='rows' type='space' />
-            <format attr='subtitle' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='' />
-            <format attr='auto-subtitle' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='true' />
-            <format attr='display' class='0' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' scope='rows' value='false' />
+            <encoding attr='space' class='0' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' field-type='quantitative' major-show='false' minor-show='false' scope='rows' type='space' />
+            <format attr='subtitle' class='0' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' scope='rows' value='' />
+            <format attr='auto-subtitle' class='0' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' scope='rows' value='true' />
+            <format attr='display' class='0' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' scope='rows' value='false' />
             <format attr='border-color' value='#b0b0b0' />
             <format attr='border-width' value='1' />
             <format attr='line-pattern-only' value='dotted' />
@@ -1226,23 +819,23 @@
             <format attr='tick-color' value='#00000000' />
           </style-rule>
           <style-rule element='cell'>
-            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' value='p0%' />
-            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='0' />
-            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
-            <format attr='text-format' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='' />
-            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='8' />
+            <format attr='text-format' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' value='p0%' />
+            <format attr='text-orientation' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='0' />
+            <format attr='text-align' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='center' />
+            <format attr='text-format' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='' />
+            <format attr='font-size' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='8' />
           </style-rule>
           <style-rule element='label'>
-            <format attr='display' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='true' />
+            <format attr='display' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='true' />
             <format attr='font-size' scope='cols' value='8' />
-            <format attr='text-orientation' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='0' />
-            <format attr='text-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
-            <format attr='vertical-align' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='center' />
-            <format attr='font-size' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='8' />
+            <format attr='text-orientation' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='0' />
+            <format attr='text-align' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='center' />
+            <format attr='vertical-align' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='center' />
+            <format attr='font-size' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='8' />
           </style-rule>
           <style-rule element='worksheet'>
             <format attr='display-field-labels' scope='cols' value='false' />
-            <format attr='in-tooltip' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]' value='false' />
+            <format attr='in-tooltip' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]' value='false' />
           </style-rule>
           <style-rule element='dropline'>
             <format attr='line-visibility' value='off' />
@@ -1264,8 +857,8 @@
             </view>
             <mark class='Automatic' />
             <encodings>
-              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' />
-              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]' />
+              <color column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]' />
+              <text column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]' />
             </encodings>
             <style>
               <style-rule element='mark'>
@@ -1281,8 +874,8 @@
             </style>
           </pane>
         </panes>
-        <rows include-empty='true'>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[pcto:cnt:rating:qk]</rows>
-        <cols include-empty='true'>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:rating:ok]</cols>
+        <rows include-empty='true'>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[pcto:cnt:Rating: original:qk]</rows>
+        <cols include-empty='true'>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Rating: original:ok]</cols>
       </table>
     </worksheet>
     <worksheet name='Reviews'>
@@ -1290,15 +883,15 @@
         <title>
           <formatted-text>
             <run fontsize='10'>Current selection -&gt; App: </run>
-            <run bold='true' fontsize='10'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]&gt;</run>
+            <run bold='true' fontsize='10'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:app:nk]&gt;</run>
             <run fontsize='10'> | Feature: </run>
-            <run bold='true' fontsize='10'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]&gt; </run>
+            <run bold='true' fontsize='10'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:pattern:nk]&gt; </run>
           </formatted-text>
         </title>
         <caption>
           <formatted-text>
             <run>App: &lt;</run>
-            <run>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]</run>
+            <run>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (app,pattern)]</run>
             <run>&gt;&#10;</run>
           </formatted-text>
         </caption>
@@ -1307,62 +900,56 @@
       <table>
         <view>
           <datasources>
-            <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+            <datasource caption='sample_data' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' />
           </datasources>
-          <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+          <datasource-dependencies datasource='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc'>
             <column caption='review_color' datatype='string' name='[Calculation_3094254478144913408]' role='dimension' type='nominal'>
               <calculation class='tableau' formula='IF [review_sentiment]&gt;0 then &quot;positive&quot;&#10;ELSEIF [review_sentiment]&lt;0 then &quot;negative&quot;&#10;else &quot;neutral&quot; END' />
             </column>
-            <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
-            </column>
-            <column caption='app' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column datatype='string' name='[QY]' role='dimension' type='nominal' />
+            <column datatype='integer' name='[Rating: original]' role='measure' type='quantitative' />
+            <column caption='App' datatype='string' name='[app]' role='dimension' type='nominal' />
+            <column-instance column='[Rating: original]' derivation='Attribute' name='[attr:Rating: original:qk]' pivot='key' type='quantitative' />
             <column-instance column='[app]' derivation='Attribute' name='[attr:app:nk]' pivot='key' type='nominal' />
             <column-instance column='[date]' derivation='Attribute' name='[attr:date:ok]' pivot='key' type='ordinal' />
             <column-instance column='[pattern]' derivation='Attribute' name='[attr:pattern:nk]' pivot='key' type='nominal' />
-            <column-instance column='[rating]' derivation='Attribute' name='[attr:rating:qk]' pivot='key' type='quantitative' />
             <column-instance column='[sentence]' derivation='Attribute' name='[attr:sentence:nk]' pivot='key' type='nominal' />
-            <column caption='Quarter' datatype='string' name='[date (copy)]' role='dimension' type='nominal'>
-              <calculation class='tableau' formula='CASE month(DATETRUNC(&quot;quarter&quot;,[date]))&#10;WHEN 1 then &quot;Q1&quot; &#10;when 4 then &quot;Q2&quot;&#10;when 7 then &quot;Q3&quot;&#10;when 10 then &quot;Q4&quot; END' />
-            </column>
-            <column caption='date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+            <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
             <column-instance column='[Calculation_3094254478144913408]' derivation='None' name='[none:Calculation_3094254478144913408:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+            <column-instance column='[QY]' derivation='None' name='[none:QY:nk]' pivot='key' type='nominal' />
             <column-instance column='[review]' derivation='None' name='[none:review:nk]' pivot='key' type='nominal' />
             <column-instance column='[review_id]' derivation='None' name='[none:review_id:nk]' pivot='key' type='nominal' />
-            <column caption='pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
-            <column caption='Rating: original' datatype='integer' name='[rating]' role='measure' type='quantitative'>
-              <aliases>
-                <alias key='1' value='1✮' />
-                <alias key='2' value='2✮' />
-                <alias key='3' value='3✮' />
-                <alias key='4' value='4✮' />
-                <alias key='5' value='5✮' />
-              </aliases>
-            </column>
-            <column caption='review' datatype='string' name='[review]' role='dimension' type='nominal' />
-            <column caption='review_id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
-            <column datatype='integer' name='[review_sentiment]' role='dimension' type='ordinal' />
-            <column datatype='string' name='[sentence]' role='dimension' type='nominal' />
+            <column caption='Pattern' datatype='string' name='[pattern]' role='dimension' type='nominal' />
+            <column caption='Review' datatype='string' name='[review]' role='dimension' type='nominal' />
+            <column caption='Review Id' datatype='string' name='[review_id]' role='dimension' type='nominal' />
+            <column caption='Review Sentiment' datatype='integer' name='[review_sentiment]' role='measure' type='quantitative' />
+            <column caption='Sentence' datatype='string' name='[sentence]' role='dimension' type='nominal' />
           </datasource-dependencies>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]'>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (App,Pattern)]'>
             <groupfilter function='crossjoin' user:ui-action-filter='[Action1]' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
               <groupfilter function='empty-level' member='[app]' />
               <groupfilter function='empty-level' member='[pattern]' />
             </groupfilter>
           </filter>
-          <filter class='categorical' column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' filter-group='3'>
-            <groupfilter function='member' level='[none:Quarter (copy):nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (app,pattern)]'>
+            <groupfilter function='crossjoin' user:ui-action-filter='[Action1]' user:ui-enumeration='all' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[app]' />
+              <groupfilter function='level-members' level='[pattern]' />
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]' filter-group='3'>
+            <groupfilter function='member' level='[none:QY:nk]' member='&quot;2017 Q4&quot;' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
           </filter>
           <slices>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[Action (app,pattern)]</column>
-            <column>[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (app,pattern)]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]</column>
+            <column>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[Action (App,Pattern)]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style>
           <style-rule element='quick-filter'>
-            <format attr='title' field='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' value='Review sentiment'>
+            <format attr='title' field='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]' value='Review sentiment'>
               <formatted-text>
                 <run>Review sentiment</run>
               </formatted-text>
@@ -1377,31 +964,31 @@
             <mark class='Shape' />
             <mark-sizing mark-sizing-setting='marks-scaling-off' />
             <encodings>
-              <color column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' />
-              <tooltip column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:sentence:nk]' />
-              <text column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review:nk]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:date:ok]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:rating:qk]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]' />
-              <lod column='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review_id:nk]' />
+              <color column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]' />
+              <tooltip column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:sentence:nk]' />
+              <text column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:review:nk]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:app:nk]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:date:ok]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Rating: original:qk]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:pattern:nk]' />
+              <lod column='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:review_id:nk]' />
             </encodings>
             <customized-tooltip>
               <formatted-text>
                 <run bold='true'>Extracts mentioning </run>
-                <run bold='true' underline='true'>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:pattern:nk]&gt;</run>
+                <run bold='true' underline='true'>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:pattern:nk]&gt;</run>
                 <run bold='true'>:</run>
                 <run>Æ&#10;</run>
-                <run italic='true'>&quot;&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:sentence:nk]&gt;&quot;</run>
+                <run italic='true'>&quot;&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:sentence:nk]&gt;&quot;</run>
                 <run>Æ&#10;&#10;</run>
                 <run bold='true'>Full review:</run>
-                <run>&#10;&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:review:nk]&gt;&#10;&#10;</run>
+                <run>&#10;&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:review:nk]&gt;&#10;&#10;</run>
                 <run bold='true'>Rating:</run>
-                <run> &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:rating:qk]&gt; | </run>
+                <run> &lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Rating: original:qk]&gt; | </run>
                 <run bold='true'>Date:</run>
-                <run> &lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:date:ok]&gt; &#10;</run>
+                <run> &lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:date:ok]&gt; &#10;</run>
                 <run bold='true'>App: </run>
-                <run>&lt;[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:app:nk]&gt;</run>
+                <run>&lt;[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:app:nk]&gt;</run>
                 <run bold='true'>Æ </run>
                 <run>Æ&#10;&#10;</run>
               </formatted-text>
@@ -1434,28 +1021,26 @@
       <style />
       <size sizing-mode='automatic' />
       <datasources>
-        <datasource caption='final_data (TEMP_0aizimm0xhg1og0zowrpb0g2zzg5)' name='federated.0pl0ds504pxp4d17jiqzv1ob5yek' />
+        <datasource caption='sample_data' name='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc' />
       </datasources>
-      <datasource-dependencies datasource='federated.0pl0ds504pxp4d17jiqzv1ob5yek'>
+      <datasource-dependencies datasource='federated.1h7i9eb1yvqkb41dgh2ct1qj85tc'>
         <column caption='SWOT classifier' datatype='string' name='[Calculation_50313703186886656]' role='measure' type='nominal'>
           <calculation class='tableau' formula='if [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;= -[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Weakness&quot; &#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&gt;=[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &gt;= ([FPS (copy)]+[Parameters].[Parameter 2]) then&#10;&quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403]&lt;=-[Parameters].[Parameter 2] and&#10;[Calculation_487162871687270403] &lt;= ([FPS (copy)]-[Parameters].[Parameter 2]) then&#10;&quot;Opportunity&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Threat&quot;&#10;&#10;ELSEIF [app]!=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Opportunity&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = 1 then &quot;Strength&quot;&#10;&#10;ELSEIF [app]=[Parameters].[Parâmetro 1] and&#10;[Calculation_487162871687270403] = -1 then &quot;Weakness&quot;&#10;&#10;else &quot;Others&quot;&#10;end' />
         </column>
         <column caption='Feat freq: Low/medium/high' datatype='string' name='[Calculation_6254374024476311552]' role='measure' type='nominal'>
           <calculation class='tableau' formula='if [FIS: feat. volume all apps (copy)]&lt;= [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/6 then &quot;1. Low&quot;&#10;ELSEIF [FIS: feat. volume all apps (copy)]&lt;=  [Feat freq: Max freq (copy)]+ ([CALC: Pattern frequency (copy)]-[Feat freq: Max freq (copy)])/3 then &quot;2. Medium&quot;&#10;else &quot;3. High&quot; end' />
         </column>
-        <column caption='QY' datatype='string' name='[Quarter (copy)]' role='dimension' type='nominal'>
-          <calculation class='tableau' formula='str(year(DATETRUNC(&quot;quarter&quot;,[date]))) + &quot; &quot; + [date (copy)]' />
-        </column>
+        <column datatype='string' name='[QY]' role='dimension' type='nominal' />
         <column-instance column='[Calculation_50313703186886656]' derivation='Attribute' name='[attr:Calculation_50313703186886656:nk]' pivot='key' type='nominal' />
         <column-instance column='[Calculation_6254374024476311552]' derivation='Attribute' name='[attr:Calculation_6254374024476311552:nk]' pivot='key' type='nominal' />
-        <column-instance column='[Quarter (copy)]' derivation='None' name='[none:Quarter (copy):nk]' pivot='key' type='nominal' />
+        <column-instance column='[QY]' derivation='None' name='[none:QY:nk]' pivot='key' type='nominal' />
       </datasource-dependencies>
       <zones use-insets='false'>
         <zone h='100000' id='2' type='layout-basic' w='100000' x='0' y='0'>
-          <zone h='83882' id='15' type='layout-basic' w='98504' x='748' y='1278'>
-            <zone h='83882' id='5' param='horz' type='layout-flow' w='83073' x='748' y='1278'>
-              <zone h='83882' id='3' type='layout-basic' w='83073' x='748' y='1278'>
-                <zone h='83882' id='1' name='All apps' show-title='false' w='83073' x='748' y='1278'>
+          <zone h='83372' id='15' type='layout-basic' w='97864' x='1068' y='1574'>
+            <zone h='83372' id='5' param='horz' type='layout-flow' w='82533' x='1068' y='1574'>
+              <zone h='83372' id='3' type='layout-basic' w='82533' x='1068' y='1574'>
+                <zone h='83372' id='1' name='All apps' show-title='false' w='82533' x='1068' y='1574'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1465,9 +1050,9 @@
                 </zone>
               </zone>
             </zone>
-            <zone h='83882' id='16' param='horz' type='layout-flow' w='15431' x='83821' y='1278'>
-              <zone fixed-size='185' h='83882' id='4' is-fixed='true' param='vert' type='layout-flow' w='15431' x='83821' y='1278'>
-                <zone custom-title='true' fixed-size='109' h='18690' id='11' is-fixed='true' mode='type_in' param='[Parameters].[Parâmetro 1]' type='paramctrl' w='15431' x='83821' y='1278'>
+            <zone h='83372' id='16' param='horz' type='layout-flow' w='15331' x='83601' y='1574'>
+              <zone fixed-size='185' h='83372' id='4' is-fixed='true' param='vert' type='layout-flow' w='15331' x='83601' y='1574'>
+                <zone custom-title='true' fixed-size='109' h='20918' id='11' is-fixed='true' mode='type_in' param='[Parameters].[Parâmetro 1]' type='paramctrl' w='15331' x='83601' y='1574'>
                   <formatted-text>
                     <run bold='true' underline='true'>TO START</run>
                     <run>&#10;Type your app name:</run>
@@ -1479,7 +1064,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='45' h='8466' id='18' is-fixed='true' mode='dropdown' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='filter' w='15431' x='83821' y='19968'>
+                <zone fixed-size='45' h='10433' id='18' is-fixed='true' mode='dropdown' name='All apps' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' type='filter' w='15331' x='83601' y='22492'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1487,7 +1072,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='44' h='8307' id='7' is-fixed='true' mode='checkdropdown' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_6254374024476311552:nk]' type='filter' w='15431' x='83821' y='28434'>
+                <zone fixed-size='44' h='10236' id='7' is-fixed='true' mode='checkdropdown' name='All apps' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_6254374024476311552:nk]' type='filter' w='15331' x='83601' y='32925'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1495,7 +1080,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='98' h='16933' id='17' is-fixed='true' mode='slider' name='All apps' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Quarter (copy):nk]' show-all='false' type='filter' w='15431' x='83821' y='36741'>
+                <zone fixed-size='98' h='20866' id='17' is-fixed='true' mode='slider' name='All apps' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:QY:nk]' show-all='false' type='filter' w='15331' x='83601' y='43161'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1503,7 +1088,7 @@
                     <format attr='margin' value='4' />
                   </zone-style>
                 </zone>
-                <zone fixed-size='121' h='20607' id='8' is-fixed='true' name='All apps' pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='color' w='15431' x='83821' y='53674'>
+                <zone fixed-size='121' h='20919' id='8' is-fixed='true' name='All apps' pane-specification-id='0' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' type='color' w='15331' x='83601' y='64027'>
                   <zone-style>
                     <format attr='border-color' value='#000000' />
                     <format attr='border-style' value='none' />
@@ -1514,7 +1099,7 @@
               </zone>
             </zone>
           </zone>
-          <zone h='13562' id='9' name='Reviews' w='98504' x='748' y='85160'>
+          <zone h='13480' id='9' name='Reviews' w='97864' x='1068' y='84946'>
             <zone-style>
               <format attr='border-color' value='#000000' />
               <format attr='border-style' value='none' />
@@ -1556,10 +1141,17 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]' type='color' />
           </strip>
         </edge>
       </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
     </window>
     <window class='worksheet' name='Ratings'>
       <cards>
@@ -1583,7 +1175,7 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[none:Calculation_3094254478144913408:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[none:Calculation_3094254478144913408:nk]' type='color' />
           </strip>
         </edge>
       </cards>
@@ -1610,12 +1202,17 @@
         </edge>
         <edge name='right'>
           <strip size='160'>
-            <card pane-specification-id='0' param='[federated.0pl0ds504pxp4d17jiqzv1ob5yek].[attr:Calculation_50313703186886656:nk]' type='color' />
+            <card pane-specification-id='0' param='[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <viewpoint>
         <zoom type='entire-view' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1h7i9eb1yvqkb41dgh2ct1qj85tc].[attr:Calculation_50313703186886656:nk]</field>
+          </color-one-way>
+        </highlight>
         <floating-toolbar-visibility value='1' />
         <default-map-tool-selection tool='2' />
       </viewpoint>
@@ -1624,13 +1221,715 @@
       <viewpoints>
         <viewpoint name='All apps'>
           <zoom type='entire-view' />
-          <default-map-tool-selection tool='4' />
+          <default-map-tool-selection tool='2' />
         </viewpoint>
         <viewpoint name='Reviews'>
           <zoom type='entire-view' />
         </viewpoint>
       </viewpoints>
-      <active id='17' />
+      <active id='1' />
     </window>
   </windows>
+  <thumbnails>
+    <thumbnail height='192' name='All apps' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Ratings' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='ReSWOT' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='24' name='Reviews' width='64'>
+      iVBORw0KGgoAAAANSUhEUgAAAEAAAAAYCAYAAABKtPtEAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAAS0lEQVRYhe3QQRHAMADDsHX8Oacw9KiFwOezbd/Dfh2gNUAHaA3QAVoDdIDWAB2gNUAH
+      aA3QAVoDdIDWAB2gNUAHaA3QAVoDdIB2AVXABCzFbDFLAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
 </workbook>
