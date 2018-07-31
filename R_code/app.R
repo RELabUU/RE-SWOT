@@ -2,7 +2,6 @@ library(DT)
 library(shiny)
 library(shinydashboard)
 library(shinyjs)
-library(googlesheets)
 library(stringr)
 library(udpipe)
 library(quanteda)
@@ -14,6 +13,7 @@ library(httr)
 library(tidytext)
 library(gtools)
 library("V8")
+#library(googlesheets) Uncomment for uploading visualization data to a Google Spreadsheet
 source("./collocations_v2.R", local = TRUE)
 
 
@@ -70,10 +70,11 @@ onFirstInteractive: function () {
 server <- function(input, output, session){
   
   values <- reactiveValues(downloadReady = FALSE)
- 
-  googlesheets::gs_webapp_auth_url(client_id = "YOUR_CLIENT_ID", redirect_uri = "http://127.0.0.1:6456/", access_type = "online", approval_prompt = "auto")
-  sheet_key <- "YOUR_SHEET_KEY"
-  ss <- googlesheets::gs_key(sheet_key)
+
+  # Uncomment for uploading visualization data to a Google Spreadsheet
+  #googlesheets::gs_webapp_auth_url(client_id = "YOUR_CLIENT_ID", redirect_uri = "REDIRECT_URI", access_type = "online", approval_prompt = "auto")
+  #sheet_key <- "YOUR_SHEET_KEY"
+  #ss <- googlesheets::gs_key(sheet_key)
   js$initializeViz()  
   
   data <- reactive({
@@ -98,7 +99,7 @@ server <- function(input, output, session){
       
       final_csv <- write.csv(final, "final_csv.csv")
       
-      gs_upload("final_csv.csv", "YOUR_SHEET_NAME", overwrite = TRUE)
+      #gs_upload("final_csv.csv", "YOUR_SHEET_NAME", overwrite = TRUE)
       
       values$downloadReady <- TRUE
       return(final)
